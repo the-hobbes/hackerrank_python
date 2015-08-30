@@ -18,7 +18,11 @@ def main():
 
     for i in range(0, m):
         key = raw_input()
-        print " ".join(str(indecies) for indecies in d[key])
+        idx = " ".join(str(indecies) for indecies in d[key])
+        if len(idx) < 1:
+            print -1
+        else:
+            print idx
 
 
 if __name__ == '__main__':
