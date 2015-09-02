@@ -8,14 +8,15 @@ import collections
 
 n = input()
 raw_words = []
+words = collections.OrderedDict()
 
 for i in range(0, n):
-    x = raw_input().strip()    
-    raw_words.append(x)
+    x = raw_input().strip()
+    if words.get(x):
+        words[x] += 1
+    else:
+        words[x] = 1
 
-words = collections.OrderedDict.fromkeys(raw_words)  # use ordered dict instead of set so that order is preserved
-
-print len(words)  # number of distinct words
-
-for word in words.keys():  # count of each word in original output
-    print raw_words.count(word),  # the ',' causes print output on the same line
+print len(words)
+for item in words:
+    print words.get(item),
