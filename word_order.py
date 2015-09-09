@@ -19,4 +19,4 @@ for i in range(0, n):
 
 print len(words)
 for item in words:
-    print words.get(item),
+    print words.get(item)
