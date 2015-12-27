@@ -6,14 +6,14 @@
 
 
 def main():
-    i = input() # number of elements in set A
-    temp = raw_input().strip().split(" ")
-    # A = set([int(x) for x in temp])
-    
-    for item in temp:
-      if temp.count(item) == 1:
-        print item
+    n = input() 
+    rooms = raw_input().strip().split(" ")
+    rooms.sort()
 
+    for i in range(0, len(rooms), n):
+      if (rooms[i] != rooms[(i+1)%len(rooms)]): # use mod to compare the tail to the head
+        print rooms[i]
+        break
 
 if __name__ == '__main__':
     main()
