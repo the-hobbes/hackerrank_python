@@ -10,12 +10,11 @@ def main():
 
   for i in range(n):
     elements_of_b = set(raw_input().strip().split())
-    size_diff = len(elements_of_a) - len(elements_of_b)
-    set_diff = len(elements_of_a.difference(elements_of_b))
-    # if the difference between the sets is greater than just the difference
-    # of the size of the sets, we know that there are additional differences in
-    # the elements of the set?
-    if set_diff <= size_diff:
+    if len(elements_of_b) >= len(elements_of_a):
+      # if there are more elements in b, then a is defs not a superset of b.
+      is_superset = False
+    if not elements_of_b.issubset(elements_of_a):
+      # if b isn't a subset of a, a defs isn't a superset of b
       is_superset = False
 
   print is_superset
